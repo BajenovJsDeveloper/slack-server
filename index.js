@@ -14,7 +14,7 @@ const HOOK = 1;
 const MONGODB = 2;
 const PW = "hello world";
 
-const token = fs.readFileSync(__dirname + 'config/dbaccess.cfg','utf8').split('^');
+const token = fs.readFileSync(__dirname + '/config/dbaccess.cfg','utf8').split('^');
 const tokenMessage = token[MESSAGE];
 const tokenHook = token[HOOK];
 const dbPass = token[MONGODB];
