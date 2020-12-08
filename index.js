@@ -98,9 +98,10 @@ app.post("/message", function (req, res) {
             msghook(dataObj)
               .then((response) => {
                 console.log(response);
-                if (response.data.ok)
-                  res.json({ status: "OK", message: "Item added to DB." });
-                else res.status(200).send('ok');
+                res.send('message sended to channel #general')
+                // if (response.data.ok)
+                //   res.json({ status: "OK", message: "Item added to DB." });
+                // else res.status(200).send('ok');
               })
               .catch((err) => {
                 console.log("Error to connct with Slack!");
