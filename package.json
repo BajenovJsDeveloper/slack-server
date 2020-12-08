@@ -1,0 +1,17 @@
+{
+  "name": "slack-server",
+  "version": "1.0.0",
+  "description": "slackServer",
+  "main": "index.js",
+  "author": "Vladimir",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "pidcrypt": "^0.0.31",
+    "qs": "^6.9.4"
+  }
+}
