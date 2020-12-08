@@ -43,6 +43,9 @@ mongoClient.connect(function (err, client) {
   app.locals.collection = client
     .db(DATABASE_NAME)
     .collection(DATABASE_DOCUMENT);
+  app.listen(PORT, () => {
+    console.log("Server is running on port: ", PORT);
+  });
 });
 
 app.get("/info", function (req, res) {
@@ -140,6 +143,4 @@ process.on("SIGINT", () => {
   process.exit();
 });
 
-app.listen(PORT, () => {
-  console.log("Server is running on port: ", PORT);
-});
+
