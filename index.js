@@ -52,7 +52,7 @@ app.get("/info", function (req, res) {
   res.header("Access-Control-Allow-Origin", "*");
   const collection = req.app.locals.collection;
   try {
-    collection.find({}).toArray(function (err, messages) {
+    collection.find().toArray(function (err, messages) {
       if (err) {
         res.json({
           status: "error",
@@ -114,9 +114,10 @@ app.post("/message", function (req, res) {
             msgaxios(dataObj)
               .then((response) => {
                 console.log(response);
-                if (response.data.ok)
-                  res.json({ status: "OK", message: "Item added to DB." });
-                else res.status(200).send('ok');
+                res.send(messsage)
+                // if (response.data.ok)
+                //   res.json({ status: "OK", message: "Item added to DB." });
+                // else res.status(200).send('ok');
               })
               .catch((err) => {
                 console.log("Error to connct with Slack!");
